@@ -10,4 +10,5 @@ public class Testimonial
     public string Comment { get; set; }
     public string ClientImage { get; set; }
     public bool Status { get; set; }
+    
 }
