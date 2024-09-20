@@ -30,4 +30,10 @@ public class GenericRepository<T> : IGenericDal<T> where T:class
 
         return c.Set<T>().ToList();
     }
+
+    public T GetByID(int id)
+    {
+        using var c = new Context();
+        return c.Set<T>().Find(id);
+    }
 }
