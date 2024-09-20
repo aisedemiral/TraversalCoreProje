@@ -6,7 +6,7 @@ namespace TraversalCoreProje.ViewComponents.Default;
 
 public class _PopularDestinationsPartial:ViewComponent
 {
-    private DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
+     DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
     public IViewComponentResult Invoke()
     {
         var values = destinationManager.TGetList();
