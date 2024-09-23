@@ -15,7 +15,7 @@ public class CommentManager:ICommentService
 
      public void TAdd(Comment t)
     {
-        throw new NotImplementedException();
+        commentDal.Insert(t);
     }
 
     public void TDelete(Comment t)

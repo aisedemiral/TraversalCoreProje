@@ -1,26 +1,23 @@
 <div class="leave-comment-form mt-5" id="reply">
-    <h4 class="side-title mb-2">Leave a Reply</h4>
-    <p class="mb-4">Your email address will not be published. Required fields are marked *
+    <h4 class="side-title mb-2">Bir Yorum Bırakınız</h4>
+    <p class="mb-4">İşaretli alanları doldurmanız gerekmektedir.
     </p>
-    <form action="#" method="post">
-
+    <form method="post" asp-action="AddComment" asp-controller="Comment">
         <div class="form-group">
-            <textarea name="Comment" class="form-control" placeholder="Your Comment*" required=""
+            <textarea name="CommentContent" class="form-control" placeholder="Yorumunuz" required=""
                       spellcheck="false"></textarea>
         </div>
         <div class="input-grids row">
-
             <div class="form-group col-lg-6">
-                <input type="text" name="Name" class="form-control" placeholder="Your Name*"
+                <input type="text" name="CommentUser" class="form-control" placeholder="Adınız Soyadınız"
                        required="">
             </div>
             <div class="form-group col-lg-6">
-                <input type="email" name="Email" class="form-control" placeholder="Email*" required="">
+                <input type="text" name="DestinationID" class="form-control" placeholder="Destination ID" required="">
             </div>
         </div>
-
         <div class="submit text-right">
-            <button class="btn btn-style btn-primary">Post Comment </button>
+            <button class="btn btn-style btn-primary">Yorum Bırakın </button>
         </div>
     </form>
 </div>

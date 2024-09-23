@@ -10,6 +10,7 @@ public class GenericRepository<T> : IGenericDal<T> where T:class
     {
         using var c = new Context();
         c.Add(t);
+        c.SaveChanges();
     }
 
     public void Delete(T t)
