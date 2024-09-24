@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace BusinessLayer.Abstract;
 
 public interface IGenericService<T>
@@ -8,4 +10,5 @@ public interface IGenericService<T>
     List<T> TGetList();
     
     T TGetByID(int id);
+   // List<T> GetByFilter(Expression<Func<T, bool>> filter);
 }
