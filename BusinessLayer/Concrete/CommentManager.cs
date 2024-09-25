@@ -1,5 +1,6 @@
 using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Migrations;
 using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete;
@@ -20,26 +21,33 @@ public class CommentManager:ICommentService
 
     public void TDelete(Comment t)
     {
-        throw new NotImplementedException();
+        commentDal.Delete(t);
     }
 
     public void TUpdate(Comment t)
     {
         throw new NotImplementedException();
     }
+    
 
     public List<Comment> TGetList()
     {
-        throw new NotImplementedException();
+        return commentDal.GetList();
+
     }
 
     public Comment TGetByID(int id)
     {
-        throw new NotImplementedException();
+        return commentDal.GetByID(id);
     }
 
     public List<Comment> TGetDestinationByID(int id)
     {
         return commentDal.GetListByFilter(x => x.DestinationID == id);
+    }
+
+    public List<Comment> TGetListCommentWithDestination()
+    {
+        return commentDal.GetListCommentWithDestination();
     }
 }
