@@ -1,3 +1,4 @@
+using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
@@ -8,10 +9,16 @@ namespace TraversalCoreProje.Controllers;
 
 public class DestinationController : Controller
 {
-    DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
+    private readonly IDestinationService _destinationService;
+
+    public DestinationController(IDestinationService destinationService)
+    {
+        _destinationService = destinationService;
+    }
+
     public IActionResult Index()
     {
-        var values = destinationManager.TGetList();
+        var values = _destinationService.TGetList();
         return View(values);
     }
 
@@ -19,7 +26,7 @@ public class DestinationController : Controller
     public IActionResult DestinationDetails(int id)
     {
         ViewBag.i = id;
-        var values = destinationManager.TGetByID(id);
+        var values = _destinationService.TGetByID(id);
         return View(values);
     }
     [HttpPost]
