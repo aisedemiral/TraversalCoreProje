@@ -24,6 +24,7 @@ public class GenericRepository<T> : IGenericDal<T> where T:class
     {
         using var c = new Context();
         c.Update(t);
+        c.SaveChanges();
     }
 
     public List<T> GetList()
