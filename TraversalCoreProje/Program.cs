@@ -14,6 +14,12 @@ using TraversalCoreProje.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddLogging(x =>
+{
+    x.ClearProviders();
+    x.SetMinimumLevel(LogLevel.Debug);
+    x.AddDebug();
+});
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
@@ -32,7 +38,17 @@ builder.Services.AddMvc();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
+var path = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
+if (!Directory.Exists(path))
+{
+    Directory.CreateDirectory(path); // Klasörü oluştur
+}
+
+var loggerFactory = new LoggerFactory();
+var logFilePath = Path.Combine(path, "log1.txt");
+loggerFactory.AddFile(logFilePath); // Kendi dosya logger'ınızı ekleyin
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -40,6 +56,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404","?code={0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthentication();

@@ -15,11 +15,21 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        _logger.LogInformation("Index Sayfası Çağırıldı.");
+        _logger.LogError("Error log çağırıldı.");
         return View();
     }
 
     public IActionResult Privacy()
     {
+        DateTime d =Convert.ToDateTime( DateTime.Now.ToLongDateString());
+        _logger.LogInformation(d + "Privacy Sayfası Çağırıldı.");
+        return View();
+    }
+
+    public IActionResult Test()
+    {
+        _logger.LogInformation("Test Sayfası Çağırıldı.");
         return View();
     }
 
