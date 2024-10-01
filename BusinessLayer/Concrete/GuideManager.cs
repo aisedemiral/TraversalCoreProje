@@ -37,4 +37,14 @@ public class GuideManager:IGuideService
     {
         return _guideDal.GetByID(id);
     }
+
+    public void TChangeToTrueByGuide(int id)
+    {
+        _guideDal.ChangeToFalseByGuide(id);
+    }
+
+    public void TChangeToFalseByGuide(int id)
+    {
+        _guideDal.ChangeToTrueByGuide(id);
+    }
 }
