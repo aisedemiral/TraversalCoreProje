@@ -31,6 +31,9 @@ public static class Extension
         services.AddScoped<IContactUsService, ContactUsManager>();
         services.AddScoped<IContactUsDal, EfContactUsDal>();
 
+        services.AddScoped<IAnnouncementService, AnnouncementManager>();
+        services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
+
 
     }
 }
