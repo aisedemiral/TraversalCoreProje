@@ -13,11 +13,13 @@ using FluentValidation.AspNetCore;
 using FluentValidation.Internal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using TraversalCoreProje.CQRS.Handlers.DestinationHandlers;
 using TraversalCoreProje.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<GetAllDestinationQueriesHandler>();
 builder.Services.AddLogging(x =>
 {
     x.ClearProviders();

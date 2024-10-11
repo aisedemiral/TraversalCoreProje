@@ -80,7 +80,7 @@ public class VisitorApiController : Controller
         var client = _httpClientFactory.CreateClient();
         var jsonData = JsonConvert.SerializeObject(p);
         StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-        var responseMessage = await client.PutAsync($"http://localhost:5090/api/Visitor/{id}");
+        var responseMessage = await client.PutAsync("http://localhost:5090/api/Visitor/",content);
         if (responseMessage.IsSuccessStatusCode)
         {
             return RedirectToAction("Index");
