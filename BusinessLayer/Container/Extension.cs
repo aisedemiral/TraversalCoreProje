@@ -1,8 +1,11 @@
 using BusinessLayer.Abstract;
+using BusinessLayer.Abstract.AbstractUow;
 using BusinessLayer.Concrete;
+using BusinessLayer.Concrete.ConcreteUow;
 using BusinessLayer.ValidationRule;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
+using DataAccessLayer.UnitOfWork;
 using DTOLayer.DTOs.AnnouncementDTOs;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,7 +40,10 @@ public static class Extension
         services.AddScoped<IAnnouncementService, AnnouncementManager>();
         services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
 
+        services.AddScoped<IAccountService,AccountManager>();
+        services.AddScoped<IAccountDal, EfAccountDal>();
 
+        services.AddScoped<IUnitOfWorkDal, UnitOfWorkDal>();
     }
 
     public static void CustomerValidator(this IServiceCollection services)

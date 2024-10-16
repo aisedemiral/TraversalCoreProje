@@ -1,6 +1,24 @@
+@model List<GetAllDestinationQueryResult>
+
 @{
-    ViewData["Title"] = "GetDestination";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml/";
+ViewData["Title"] = "GetDestination";
+Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>GetDestination</h1>
+<h2>Lokasyon Düzenleme Sayfası</h2>
+
+@*
+<form method="post">
+    <input type="text" asp-for="Capacity" />
+    <label>Şehir</label>
+    <input type="text" asp-for="Capacity" class="form-control" />
+    <br />
+    <label>Gün-Gece</label>
+    <input type="text" asp-for="Count" class="form-control" />
+    <br />
+    <label>Fiyat</label>
+    <input type="text" asp-for="Capacity" class="form-control" />
+    <br />
+    <button class="btn btn-outline-success">Lokasyon Bilgilerini Güncelle</button>
+</form>
+*@
