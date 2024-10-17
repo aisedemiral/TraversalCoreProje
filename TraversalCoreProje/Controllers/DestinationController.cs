@@ -2,11 +2,12 @@ using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
 namespace TraversalCoreProje.Controllers;
-
+[AllowAnonymous]
 public class DestinationController : Controller
 {
     private readonly IDestinationService _destinationService;

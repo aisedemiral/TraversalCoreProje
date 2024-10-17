@@ -54,8 +54,6 @@ builder.Services.AddMvc(config =>
         .Build();
     config.Filters.Add(new AuthorizeFilter(policy));
 });
-builder.Services.AddMvc();
-
 var app = builder.Build();
 
 
@@ -90,10 +88,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Default}/{action=Index}/{id?}");
 
-    app.MapControllerRoute(
-        name : "areas",
-        pattern : "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-    
     app.MapControllerRoute(
         name : "areas",
         pattern : "{area:exists}/{controller=Home}/{action=Index}/{id?}");
