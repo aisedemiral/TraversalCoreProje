@@ -37,4 +37,9 @@ public class DestinationManager:IDestinationService
      {
           return _destinationDal.GetByID(id);
      }
+
+     public List<Destination> TGetDestinationWithGuide(int id)
+     {
+          return _destinationDal.GetDestinationWithGuide(id);
+     }
 }

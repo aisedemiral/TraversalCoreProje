@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRule.ContactUs;
+using DTOLayer.DTOs.ContactDTOs;
 
 namespace TraversalCoreProje.Mapping.AutoMapperProfile
 {
@@ -27,6 +30,8 @@ namespace TraversalCoreProje.Mapping.AutoMapperProfile
 
             CreateMap<AnnouncementUpdateDTO, Announcement>();
             CreateMap<Announcement, AnnouncementUpdateDTO>();
+
+            CreateMap<SendMessageDto, ContactUsManager>().ReverseMap();
         }
     }
 }
