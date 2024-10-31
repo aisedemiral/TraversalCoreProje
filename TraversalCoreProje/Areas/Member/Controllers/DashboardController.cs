@@ -20,4 +20,9 @@ public class DashboardController : Controller
         ViewBag.userImage = values.ImageUrl;
         return View();
     }
+
+    public async Task<IActionResult> MemberDashboard()
+    {
+        return View();
+    }
 }

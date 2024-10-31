@@ -61,4 +61,9 @@ public class ReservationController : Controller
         return RedirectToAction("MyCurrentReservation");
     }
 
+    public IActionResult deneme()
+    {
+        return View();
+    }
+
 }
