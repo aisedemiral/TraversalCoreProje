@@ -70,6 +70,18 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>Index.tr.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_MemberLayout.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_MemberLayout.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_MemberLayout.tr.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_MemberLayout.tr.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Views\Shared\_MemberLayout.fr.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>_MemberLayout.fr.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -102,6 +114,21 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>Index.tr.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\_MemberLayout.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_MemberLayout.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\_MemberLayout.tr.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_MemberLayout.tr.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Views\Shared\_MemberLayout.fr.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>_MemberLayout.fr.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 
